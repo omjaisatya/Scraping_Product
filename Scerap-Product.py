@@ -53,13 +53,13 @@ num_pages = 20
 for page in range(1, num_pages + 1):
     url = base_url + str(page)
     scrape_product_listing_page(url)
-    time.sleep(2)  # Delay between requests to avoid overwhelming the server
+    time.sleep(2)  
 
 csv_file.close()
 
 csv_file = open('amazon_products.csv', 'r', newline='', encoding='utf-8')
 reader = csv.reader(csv_file)
-next(reader)  # Skip header row
+next(reader) 
 
 csv_file_new = open('amazon_product_details.csv', 'w', newline='', encoding='utf-8')
 writer_new = csv.writer(csv_file_new)
